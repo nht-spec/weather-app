@@ -2,19 +2,21 @@ import React, { useEffect, useState } from 'react';
 import FormSearch from './FormSearch/FormSearch';
 import './style.scss';
 
-function SearchPlace({ woeidsearch, issearch }) {
+function SearchPlace({ woeidsearch, isbackdefault }) {
 	const [isSearch, setIsSearch] = useState(false);
+	const [isBackDefault, setIsBackDefault] = useState(false);
 	const [listSearch, setListSearch] = useState([]);
 	const [woeidSearch, setWoeidSearch] = useState('');
 
 	useEffect(() => {
 		woeidsearch && woeidsearch(woeidSearch);
 		woeidSearch && setIsSearch(false);
+		woeidSearch && setIsBackDefault(false);
 	}, [woeidSearch, woeidsearch]);
 
 	useEffect(() => {
-		issearch && issearch(isSearch);
-	}, [isSearch, issearch]);
+		isbackdefault && isbackdefault(isBackDefault);
+	}, [isBackDefault, isbackdefault]);
 
 	return (
 		<div className='search-place-control'>
@@ -26,7 +28,10 @@ function SearchPlace({ woeidsearch, issearch }) {
 					>
 						Seach for places
 					</button>
-					<span className='material-icons-round d-flex c-lavender align-center space-between cursor'>
+					<span
+						onClick={() => setIsBackDefault(true)}
+						className='material-icons-round d-flex c-lavender align-center space-between cursor'
+					>
 						my_location
 					</span>
 				</div>
@@ -41,6 +46,7 @@ function SearchPlace({ woeidsearch, issearch }) {
 						close
 					</span>
 					<FormSearch listsearch={setListSearch} />
+
 					{listSearch.data?.map((data) => (
 						<div onClick={() => setWoeidSearch(data.woeid)} key={data.woeid}>
 							{data.title}

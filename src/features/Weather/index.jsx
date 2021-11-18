@@ -5,31 +5,37 @@ import useDefaultLocation from './hooks/useDefaultLocation';
 import useGetCityDefault from './hooks/useGetCityDefault';
 import useWeatherByWoeid from './hooks/useWeatherByWoeid';
 import './style.scss';
-import '../../index.scss';
 
 function WeatherFeature() {
 	const [woeid, setWoeid] = useState('');
 	const { lattLong } = useDefaultLocation();
 	const { cityDefault } = useGetCityDefault(lattLong);
 	const [woeidSearch, setWoeidSearch] = useState('');
-	const [isSearch, setIsSearch] = useState(false);
+	const [isBackDefault, setIsBackDefault] = useState(false);
 
 	useEffect(() => {
 		cityDefault.data?.map((data, idx) => idx === 0 && setWoeid(data.woeid));
 	}, [cityDefault]);
 
+	useEffect(() => {
+		isBackDefault && setWoeidSearch('');
+	}, [isBackDefault]);
+
 	const { weatherData, loading } = useWeatherByWoeid(
 		woeidSearch ? woeidSearch : woeid
 	);
 
-	if (loading && !woeidSearch) {
+	if (loading && !woeidSearch && !isBackDefault) {
 		return <div>loading...</div>;
 	}
 
 	return (
 		<div>
 			<div className='content-one-control d-flex background-darkslategray'>
-				<SearchPlace woeidsearch={setWoeidSearch} issearch={setIsSearch} />
+				<SearchPlace
+					isbackdefault={setIsBackDefault}
+					woeidsearch={setWoeidSearch}
+				/>
 				<TodayWeather weatherData={weatherData} />
 			</div>
 		</div>
