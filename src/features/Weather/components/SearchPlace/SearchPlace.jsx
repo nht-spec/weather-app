@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import InputField from '../../../../components/FormControl/InputField/InputField';
+import React, { useEffect, useState } from 'react';
+import useSearchLocation from '../../hooks/useSearchLocation';
+import FormSearch from './FormSearch/FormSearch';
+import ListOfSearch from './ListOfSearch/ListOfSearch';
 import './style.scss';
 
-function SearchPlace(props) {
+function SearchPlace({ woeidsearch }) {
 	const [isSearch, setIsSearch] = useState(false);
-	const [valueInput, setValueInput] = useState('');
 	const [valueSubmit, setValueSubmit] = useState('');
+	const [woeidSearch, setWoeidSearch] = useState('');
+	const { listSearch } = useSearchLocation(valueSubmit);
 
-	const handleSubmit = (evt) => {
-		evt.preventDefault();
-		setValueSubmit(valueInput);
-	};
+	useEffect(() => {
+		woeidsearch && woeidsearch(woeidSearch);
+		woeidSearch && setIsSearch(false);
+	}, [woeidSearch, woeidsearch]);
 
 	return (
 		<div className='search-place-control'>
@@ -36,22 +39,8 @@ function SearchPlace(props) {
 					>
 						close
 					</span>
-
-					<form className='d-flex form-control' onSubmit={handleSubmit}>
-						<div className='d-flex input-field-control align-center'>
-							<span className='material-icons-round'>search</span>
-							<InputField
-								placeholder='Search Place'
-								handlechange={setValueInput}
-							/>
-						</div>
-						<button
-							className='btn-search f-family c-lavender cursor'
-							type='submit'
-						>
-							Search
-						</button>
-					</form>
+					<FormSearch handlesubmit={setValueSubmit} />
+					<ListOfSearch listSearch={listSearch} woeidsearch={setWoeidSearch} />
 				</div>
 			)}
 		</div>
