@@ -4,10 +4,10 @@ import TodayWeather from './components/TodayWeather/TodayWeather';
 import useDefaultLocation from './hooks/useDefaultLocation';
 import useGetCityDefault from './hooks/useGetCityDefault';
 import useWeatherByWoeid from './hooks/useWeatherByWoeid';
+import './style.scss';
+import '../../index.scss';
 
-WeatherFeature.propTypes = {};
-
-function WeatherFeature(props) {
+function WeatherFeature() {
 	const [woeid, setWoeid] = useState('');
 	const { lattLong } = useDefaultLocation();
 	const { cityDefault } = useGetCityDefault(lattLong);
@@ -24,7 +24,7 @@ function WeatherFeature(props) {
 
 	return (
 		<div>
-			<div>
+			<div className='content-one-control d-flex background-darkslategray'>
 				<SearchPlace />
 				<TodayWeather weatherData={weatherData} />
 			</div>

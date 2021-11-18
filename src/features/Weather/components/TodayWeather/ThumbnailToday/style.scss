@@ -1,0 +1,15 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.thumbnail-control {
+	width: 202px;
+	height: auto;
+	padding-top: 109px;
+	.thumbnail {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

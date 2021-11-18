@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
+import '../../../index.scss';
 
 InputField.propTypes = {};
 
@@ -9,9 +11,12 @@ function InputField({ handlechange, placeholder }) {
 	};
 
 	return (
-		<div>
-			<input type='text' placeholder={placeholder} onChange={handleChange} />
-		</div>
+		<input
+			className='f-family background-darkslategray input-filed'
+			type='text'
+			placeholder={placeholder}
+			onChange={handleChange}
+		/>
 	);
 }
 

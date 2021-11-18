@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import InputField from '../../../../components/FormControl/InputField/InputField';
-
-SearchPlace.propTypes = {};
+import './style.scss';
 
 function SearchPlace(props) {
 	const [isSearch, setIsSearch] = useState(false);
@@ -14,21 +13,44 @@ function SearchPlace(props) {
 	};
 
 	return (
-		<div>
+		<div className='search-place-control'>
 			{!isSearch && (
-				<button onClick={() => setIsSearch(true)}>Search Place</button>
+				<div className='btn-search-btn-default d-flex align-center space-between'>
+					<button
+						className='btn-search-place f-family c-lavender cursor'
+						onClick={() => setIsSearch(true)}
+					>
+						Seach for places
+					</button>
+					<span className='material-icons-round d-flex c-lavender align-center space-between cursor'>
+						my_location
+					</span>
+				</div>
 			)}
 
 			{isSearch && (
-				<div>
-					<button onClick={() => setIsSearch(false)}>X</button>
+				<div className='dialog-search-control background-darkslategray d-flex'>
+					<span
+						onClick={() => setIsSearch(false)}
+						className='material-icons-round c-lavender cursor d-flex'
+					>
+						close
+					</span>
 
-					<form onSubmit={handleSubmit}>
-						<InputField
-							placeholder='Search Place'
-							handlechange={setValueInput}
-						/>
-						<button type='submit'>Search</button>
+					<form className='d-flex form-control' onSubmit={handleSubmit}>
+						<div className='d-flex input-field-control align-center'>
+							<span className='material-icons-round'>search</span>
+							<InputField
+								placeholder='Search Place'
+								handlechange={setValueInput}
+							/>
+						</div>
+						<button
+							className='btn-search f-family c-lavender cursor'
+							type='submit'
+						>
+							Search
+						</button>
 					</form>
 				</div>
 			)}

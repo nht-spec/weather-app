@@ -1,14 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ThumbnailToday from './ThumbnailToday/ThumbnailToday';
-
+import '../../../../index.scss';
+import TheTempToday from './TheTempToday/TheTempToday';
 TodayWeather.propTypes = {};
 
 function TodayWeather({ weatherData }) {
 	return (
 		<div>
 			<ThumbnailToday weatherData={weatherData} />
-			<div>
+			<TheTempToday weatherData={weatherData} />
+			<div className='place-control d-flex'>
 				<span className='material-icons'>place</span>
 				{weatherData.data.title}
 			</div>

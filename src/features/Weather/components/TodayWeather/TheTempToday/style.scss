@@ -1,0 +1,24 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.temp-title-one {
+	font-weight: 500;
+	font-size: 144px;
+	line-height: 169px;
+	align-items: flex-end;
+	.temp-title-two {
+		padding-bottom: 30px;
+		font-weight: 100;
+		font-size: 48px;
+		line-height: 56.35px;
+	}
+}
+
+.name-temp {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 42px;
+}
