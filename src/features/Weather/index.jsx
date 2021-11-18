@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SearchPlace from './components/SearchPlace/SearchPlace';
+import TodayWeather from './components/TodayWeather/TodayWeather';
 import useDefaultLocation from './hooks/useDefaultLocation';
 import useGetCityDefault from './hooks/useGetCityDefault';
 import useWeatherByWoeid from './hooks/useWeatherByWoeid';
@@ -16,14 +17,17 @@ function WeatherFeature(props) {
 	}, [cityDefault]);
 
 	const { weatherData, loading } = useWeatherByWoeid(woeid);
+
 	if (loading) {
 		return <div>loading...</div>;
 	}
 
 	return (
 		<div>
-			weather
-			<SearchPlace />
+			<div>
+				<SearchPlace />
+				<TodayWeather weatherData={weatherData} />
+			</div>
 		</div>
 	);
 }
