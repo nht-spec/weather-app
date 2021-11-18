@@ -22,6 +22,7 @@
 		}
 	}
 	.dialog-search-control {
+		overflow-y: scroll;
 		position: absolute;
 		width: 100%;
 		height: 865px;
@@ -30,5 +31,28 @@
 		.material-icons-round {
 			justify-content: flex-end;
 		}
+		.list-search-control {
+			padding-top: 58px;
+			padding-bottom: 30px;
+			.value-search {
+				width: 367px;
+				height: 64px;
+				padding-left: 12px;
+				justify-content: space-between;
+				.material-icons-round {
+					display: none;
+				}
+			}
+			.value-search:hover {
+				border: 1px solid #616475;
+				.material-icons-round {
+					display: block;
+					color: #616475;
+				}
+			}
+		}
+	}
+	.dialog-search-control::-webkit-scrollbar {
+		display: none;
 	}
 }

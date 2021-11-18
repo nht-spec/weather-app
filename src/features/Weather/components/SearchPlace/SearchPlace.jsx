@@ -47,11 +47,18 @@ function SearchPlace({ woeidsearch, isbackdefault }) {
 					</span>
 					<FormSearch listsearch={setListSearch} />
 
-					{listSearch.data?.map((data) => (
-						<div onClick={() => setWoeidSearch(data.woeid)} key={data.woeid}>
-							{data.title}
-						</div>
-					))}
+					<div className='list-search-control'>
+						{listSearch.data?.map((data) => (
+							<div
+								className='value-search cursor f-family c-lavender d-flex align-center'
+								onClick={() => setWoeidSearch(data.woeid)}
+								key={data.woeid}
+							>
+								{data.title}
+								<span className='material-icons-round'>chevron_right</span>
+							</div>
+						))}
+					</div>
 				</div>
 			)}
 		</div>
