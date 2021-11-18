@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import useSearchLocation from '../../hooks/useSearchLocation';
 import FormSearch from './FormSearch/FormSearch';
-import ListOfSearch from './ListOfSearch/ListOfSearch';
 import './style.scss';
 
-function SearchPlace({ woeidsearch }) {
+function SearchPlace({ woeidsearch, issearch }) {
 	const [isSearch, setIsSearch] = useState(false);
-	const [valueSubmit, setValueSubmit] = useState('');
+	const [listSearch, setListSearch] = useState([]);
 	const [woeidSearch, setWoeidSearch] = useState('');
-	const { listSearch } = useSearchLocation(valueSubmit);
 
 	useEffect(() => {
 		woeidsearch && woeidsearch(woeidSearch);
 		woeidSearch && setIsSearch(false);
 	}, [woeidSearch, woeidsearch]);
+
+	useEffect(() => {
+		issearch && issearch(isSearch);
+	}, [isSearch, issearch]);
 
 	return (
 		<div className='search-place-control'>
@@ -39,8 +40,12 @@ function SearchPlace({ woeidsearch }) {
 					>
 						close
 					</span>
-					<FormSearch handlesubmit={setValueSubmit} />
-					<ListOfSearch listSearch={listSearch} woeidsearch={setWoeidSearch} />
+					<FormSearch listsearch={setListSearch} />
+					{listSearch.data?.map((data) => (
+						<div onClick={() => setWoeidSearch(data.woeid)} key={data.woeid}>
+							{data.title}
+						</div>
+					))}
 				</div>
 			)}
 		</div>

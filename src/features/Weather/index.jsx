@@ -12,6 +12,7 @@ function WeatherFeature() {
 	const { lattLong } = useDefaultLocation();
 	const { cityDefault } = useGetCityDefault(lattLong);
 	const [woeidSearch, setWoeidSearch] = useState('');
+	const [isSearch, setIsSearch] = useState(false);
 
 	useEffect(() => {
 		cityDefault.data?.map((data, idx) => idx === 0 && setWoeid(data.woeid));
@@ -28,7 +29,7 @@ function WeatherFeature() {
 	return (
 		<div>
 			<div className='content-one-control d-flex background-darkslategray'>
-				<SearchPlace woeidsearch={setWoeidSearch} />
+				<SearchPlace woeidsearch={setWoeidSearch} issearch={setIsSearch} />
 				<TodayWeather weatherData={weatherData} />
 			</div>
 		</div>

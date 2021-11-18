@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import InputField from '../../../../../components/FormControl/InputField/InputField';
+import useSearchLocation from '../../../hooks/useSearchLocation';
 import './style.scss';
 
-function FormSearch({ handlesubmit }) {
+function FormSearch({ listsearch }) {
 	const [valueInput, setValueInput] = useState('');
+	const [valueSubmit, setValueSubmit] = useState('');
+
+	const { listSearch } = useSearchLocation(valueSubmit);
+
+	useEffect(() => {
+		listsearch && listsearch(listSearch);
+	}, [listSearch, listsearch]);
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		handlesubmit && handlesubmit(valueInput);
+		setValueSubmit(valueInput);
 	};
 
 	return (
