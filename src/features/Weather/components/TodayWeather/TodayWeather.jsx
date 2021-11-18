@@ -1,7 +1,8 @@
 import React from 'react';
 import ThumbnailToday from './ThumbnailToday/ThumbnailToday';
-import '../../../../index.scss';
+import './style.scss';
 import TheTempToday from './TheTempToday/TheTempToday';
+import DateToday from './DateToday/DateToday';
 TodayWeather.propTypes = {};
 
 function TodayWeather({ weatherData }) {
@@ -9,7 +10,8 @@ function TodayWeather({ weatherData }) {
 		<div>
 			<ThumbnailToday weatherData={weatherData} />
 			<TheTempToday weatherData={weatherData} />
-			<div className='place-control d-flex'>
+			<DateToday weatherData={weatherData} />
+			<div className='place-control d-flex  f-family'>
 				<span className='material-icons'>place</span>
 				{weatherData.data.title}
 			</div>

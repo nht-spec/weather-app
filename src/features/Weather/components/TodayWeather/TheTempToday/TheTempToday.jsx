@@ -15,7 +15,7 @@ function TheTempToday({ weatherData }) {
 								{Math.trunc(data.the_temp)}{' '}
 								<p className='temp-title-two c-darkgray'>℃</p>
 							</h2>
-							<h2 className='name-temp c-darkgray padding-bottom'>
+							<h2 className='name-temp c-darkgray padding-bottom d-flex'>
 								{data.weather_state_name}
 							</h2>
 						</div>
