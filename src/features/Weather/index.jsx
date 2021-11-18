@@ -1,10 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import SearchPlace from './components/SearchPlace/SearchPlace';
 
 WeatherFeature.propTypes = {};
 
 function WeatherFeature(props) {
-	return <div>weather</div>;
+	return (
+		<div>
+			weather
+			<SearchPlace />
+		</div>
+	);
 }
 
 export default WeatherFeature;
