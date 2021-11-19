@@ -4,7 +4,6 @@ import './style.scss';
 const URL_IMAGE = 'https://www.metaweather.com/static/img/weather/png/';
 
 function ThumbnailFiveDay({ thumbnail }) {
-	console.log(thumbnail);
 	return (
 		<div className='thumbnail-five-day-control d-flex'>
 			<img

@@ -4,11 +4,11 @@ import TheTempToday from './TheTempToday/TheTempToday';
 import DateToday from './DateToday/DateToday';
 import './style.scss';
 
-function TodayWeather({ weatherData }) {
+function TodayWeather({ weatherData, isChangeDegree }) {
 	return (
 		<div>
 			<ThumbnailToday weatherData={weatherData} />
-			<TheTempToday weatherData={weatherData} />
+			<TheTempToday isChangeDegree={isChangeDegree} weatherData={weatherData} />
 			<DateToday weatherData={weatherData} />
 			<div className='place-control d-flex  f-family'>
 				<span className='material-icons'>place</span>

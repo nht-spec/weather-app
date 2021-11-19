@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 
-function ChangeDegree({ changedegree }) {
+function ChangeDegree({ ischangedegree }) {
 	const [changeDegree, setChangeDegree] = useState(false);
 
 	useEffect(() => {
-		changedegree && changedegree(changeDegree);
-	}, [changeDegree, changedegree]);
+		ischangedegree && ischangedegree(changeDegree);
+	}, [changeDegree, ischangedegree]);
 
 	return (
 		<div className='d-flex f-family  degree-control'>

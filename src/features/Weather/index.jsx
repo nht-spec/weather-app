@@ -14,6 +14,7 @@ function WeatherFeature() {
 	const { cityDefault } = useGetCityDefault(lattLong);
 	const [woeidSearch, setWoeidSearch] = useState('');
 	const [isBackDefault, setIsBackDefault] = useState(false);
+	const [isChangeDegree, setIsChangeDegree] = useState(false);
 
 	useEffect(() => {
 		cityDefault.data?.map((data, idx) => idx === 0 && setWoeid(data.woeid));
@@ -38,11 +39,18 @@ function WeatherFeature() {
 					isbackdefault={setIsBackDefault}
 					woeidsearch={setWoeidSearch}
 				/>
-				<TodayWeather weatherData={weatherData} />
+
+				<TodayWeather
+					isChangeDegree={isChangeDegree}
+					weatherData={weatherData}
+				/>
 			</div>
 			<div className='content-two-control'>
-				<ChangeDegree />
-				<NextFiveDayWeather weatherData={weatherData} />
+				<ChangeDegree ischangedegree={setIsChangeDegree} />
+				<NextFiveDayWeather
+					isChangeDegree={isChangeDegree}
+					weatherData={weatherData}
+				/>
 			</div>
 		</div>
 	);

@@ -4,8 +4,7 @@ import MaxMinTemp from './MaxMinTemp/MaxMinTemp';
 import ThumbnailFiveDay from './ThumbnailFiveDay/ThumbnailFiveDay';
 import './style.scss';
 
-function NextFiveDayWeather({ weatherData }) {
-	console.log(weatherData);
+function NextFiveDayWeather({ weatherData, isChangeDegree }) {
 	return (
 		<div className='d-flex next-five-day-control'>
 			{weatherData.data.consolidated_weather.map(
@@ -19,7 +18,11 @@ function NextFiveDayWeather({ weatherData }) {
 							</div>
 
 							<ThumbnailFiveDay thumbnail={data.weather_state_abbr} />
-							<MaxMinTemp maxTemp={data.max_temp} minTemp={data.min_temp} />
+							<MaxMinTemp
+								isChangeDegree={isChangeDegree}
+								maxTemp={data.max_temp}
+								minTemp={data.min_temp}
+							/>
 						</div>
 					)
 			)}
