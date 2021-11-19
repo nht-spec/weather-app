@@ -1,0 +1,20 @@
+.visibility-control {
+	width: 328px;
+	height: 159px;
+	flex-direction: column;
+	margin-top: 48px;
+	align-items: center;
+	.visibility-title {
+		font-weight: bold;
+		font-size: 64px;
+		line-height: 75px;
+		align-items: flex-end;
+		.visibility-unit {
+			font-weight: 500;
+			font-size: 36px;
+			line-height: 42.26px;
+			margin-left: 10px;
+			padding-bottom: 10px;
+		}
+	}
+}

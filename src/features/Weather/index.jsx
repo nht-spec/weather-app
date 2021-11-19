@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ChangeDegree from './components/ChangeDegree/ChangeDegree';
 import NextFiveDayWeather from './components/NextFiveDayWeather/NextFiveDayWeather';
 import SearchPlace from './components/SearchPlace/SearchPlace';
+import TodayHightlight from './components/TodayHightlight/TodayHightlight';
 import TodayWeather from './components/TodayWeather/TodayWeather';
 import useDefaultLocation from './hooks/useDefaultLocation';
 import useGetCityDefault from './hooks/useGetCityDefault';
@@ -51,6 +52,7 @@ function WeatherFeature() {
 					isChangeDegree={isChangeDegree}
 					weatherData={weatherData}
 				/>
+				<TodayHightlight weatherData={weatherData} />
 			</div>
 		</div>
 	);

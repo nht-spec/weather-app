@@ -1,0 +1,13 @@
+.today-hightlight-control {
+	margin-top: 72px;
+	.today-hight-title {
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 28px;
+		padding-bottom: 32px;
+	}
+	.today-hightlight-list {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}

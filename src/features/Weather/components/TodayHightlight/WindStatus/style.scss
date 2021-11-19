@@ -1,0 +1,84 @@
+.material-icons-round[id='N'] {
+	transform: rotate(-45deg);
+}
+.material-icons-round[id='NNE'] {
+	transform: rotate(-20deg);
+}
+.material-icons-round[id='NE'] {
+	transform: rotate(-4deg);
+}
+.material-icons-round[id='ENE'] {
+	transform: rotate(15deg);
+}
+.material-icons-round[id='E'] {
+	transform: rotate(35deg);
+}
+.material-icons-round[id='ESE'] {
+	transform: rotate(55deg);
+}
+.material-icons-round[id='SE'] {
+	transform: rotate(80deg);
+}
+.material-icons-round[id='SSE'] {
+	transform: rotate(95deg);
+}
+.material-icons-round[id='S'] {
+	transform: rotate(135deg);
+}
+.material-icons-round[id='SSW'] {
+	transform: rotate(150deg);
+}
+.material-icons-round[id='SW'] {
+	transform: rotate(170deg);
+}
+.material-icons-round[id='WSW'] {
+	transform: rotate(190deg);
+}
+.material-icons-round[id='W'] {
+	transform: rotate(225deg);
+}
+.material-icons-round[id='WNW'] {
+	transform: rotate(240deg);
+}
+.material-icons-round[id='NW'] {
+	transform: rotate(270deg);
+}
+.material-icons-round[id='NNW'] {
+	transform: rotate(300deg);
+}
+
+.wind-control {
+	width: 328px;
+	height: 204px;
+	flex-direction: column;
+	align-items: center;
+	.wind-speed {
+		font-weight: bold;
+		font-size: 64px;
+		line-height: 75px;
+		align-items: flex-end;
+		padding-bottom: 18px;
+		.wind-speed-unit {
+			font-weight: 500;
+			font-size: 36px;
+			line-height: 42.26px;
+			padding-bottom: 10px;
+		}
+	}
+	.compass-control {
+		align-items: center;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		.material-icons-round {
+			width: 29.49px;
+			height: 29.49px;
+			font-size: 12px;
+			background: rgba(255, 255, 255, 0.3);
+			border-radius: 50%;
+			justify-content: center;
+			align-items: center;
+			margin-right: 7px;
+		}
+	}
+}
