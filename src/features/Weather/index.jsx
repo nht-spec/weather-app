@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ChangeDegree from './components/ChangeDegree/ChangeDegree';
 import NextFiveDayWeather from './components/NextFiveDayWeather/NextFiveDayWeather';
@@ -30,7 +31,14 @@ function WeatherFeature() {
 	);
 
 	if (loading && !woeidSearch && !isBackDefault) {
-		return <div>loading...</div>;
+		return (
+			<div className='loading-control'>
+				<div className='loading'>
+					<CircularProgress />
+					<h3 className='loading-title c-lavender'>Loading...</h3>
+				</div>
+			</div>
+		);
 	}
 
 	return (

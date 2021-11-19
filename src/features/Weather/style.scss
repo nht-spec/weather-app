@@ -3,6 +3,22 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+.loading-control {
+	margin-top: 50px;
+	font-family: 'Roboto';
+	font-size: 20px;
+	text-align: center;
+
+	.loading {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.loading-title {
+		padding-top: 30px;
+	}
+}
 
 .content-control {
 	width: 100%;
@@ -22,6 +38,9 @@
 	}
 }
 @media all and (max-width: 768px) {
+	.loading-control {
+		width: 100%;
+	}
 	.content-control {
 		display: unset;
 		.content-one-control {
