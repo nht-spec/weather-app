@@ -11,3 +11,11 @@
 		justify-content: space-between;
 	}
 }
+@media all and (max-width: 768px) {
+	.today-hightlight-control {
+		margin-top: 51px;
+		.today-hightlight-list {
+			padding-bottom: 32px;
+		}
+	}
+}

@@ -18,3 +18,9 @@
 		}
 	}
 }
+@media all and (max-width: 768px) {
+	.airpressure-control {
+		margin-bottom: 32px;
+		margin-top: unset;
+	}
+}

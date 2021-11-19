@@ -21,3 +21,15 @@
 		background: #100e1d;
 	}
 }
+@media all and (max-width: 768px) {
+	.content-control {
+		display: unset;
+		.content-one-control {
+			width: 100%;
+		}
+		.content-two-control {
+			width: 100%;
+			padding: 52px 24px 0 21px;
+		}
+	}
+}

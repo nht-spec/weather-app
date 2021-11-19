@@ -22,7 +22,10 @@ function FormSearch({ listsearch }) {
 		<form className='d-flex form-control' onSubmit={handleSubmit}>
 			<div className='d-flex input-field-control align-center'>
 				<span className='material-icons-round'>search</span>
-				<InputField placeholder='Search Place' handlechange={setValueInput} />
+				<InputField
+					placeholder='search location'
+					handlechange={setValueInput}
+				/>
 			</div>
 			<button className='btn-search f-family c-lavender cursor' type='submit'>
 				Search

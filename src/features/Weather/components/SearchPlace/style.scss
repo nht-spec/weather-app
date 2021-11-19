@@ -56,3 +56,19 @@
 		display: none;
 	}
 }
+@media all and (max-width: 768px) {
+	.search-place-control {
+		.btn-search-btn-default {
+			padding: 18px 12px 0 11px;
+		}
+		.dialog-search-control {
+			padding: 12px 12px 0 12px;
+			.list-search-control {
+				width: 100%;
+				.value-search {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
