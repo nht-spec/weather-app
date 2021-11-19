@@ -1,9 +1,8 @@
 import React from 'react';
 import ThumbnailToday from './ThumbnailToday/ThumbnailToday';
-import './style.scss';
 import TheTempToday from './TheTempToday/TheTempToday';
 import DateToday from './DateToday/DateToday';
-TodayWeather.propTypes = {};
+import './style.scss';
 
 function TodayWeather({ weatherData }) {
 	return (

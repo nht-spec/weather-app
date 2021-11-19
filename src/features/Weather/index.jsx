@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ChangeDegree from './components/ChangeDegree/ChangeDegree';
+import NextFiveDayWeather from './components/NextFiveDayWeather/NextFiveDayWeather';
 import SearchPlace from './components/SearchPlace/SearchPlace';
 import TodayWeather from './components/TodayWeather/TodayWeather';
 import useDefaultLocation from './hooks/useDefaultLocation';
@@ -30,13 +32,17 @@ function WeatherFeature() {
 	}
 
 	return (
-		<div>
+		<div className=' content-control'>
 			<div className='content-one-control d-flex background-darkslategray'>
 				<SearchPlace
 					isbackdefault={setIsBackDefault}
 					woeidsearch={setWoeidSearch}
 				/>
 				<TodayWeather weatherData={weatherData} />
+			</div>
+			<div className='content-two-control'>
+				<ChangeDegree />
+				<NextFiveDayWeather weatherData={weatherData} />
 			</div>
 		</div>
 	);

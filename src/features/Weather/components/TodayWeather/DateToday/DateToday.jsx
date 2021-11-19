@@ -5,7 +5,7 @@ function DateToday({ weatherData }) {
 	const [time, setTime] = useState('');
 
 	useEffect(() => {
-		weatherData.data.consolidated_weather.map((data, idx) => {
+		weatherData.data.consolidated_weather.forEach((data, idx) => {
 			if (idx === 0) {
 				const date = new Date(data.applicable_date);
 				const day = date

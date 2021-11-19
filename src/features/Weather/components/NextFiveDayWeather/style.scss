@@ -1,0 +1,16 @@
+.next-five-day-control {
+	justify-content: space-between;
+	padding-top: 66px;
+	.weather-five-day-list {
+		width: 120px;
+		height: 177px;
+		background-color: #1e213a;
+		.date-control {
+			justify-content: center;
+			padding-top: 18px;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 19px;
+		}
+	}
+}

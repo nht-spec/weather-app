@@ -4,10 +4,20 @@
 	box-sizing: border-box;
 }
 
-.content-one-control {
-	width: 459px;
-	max-height: 1023px;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	align-items: center;
+.content-control {
+	width: 100%;
+	display: flex;
+	.content-one-control {
+		width: 43.4%;
+		// width: 459px;
+		max-height: 1023px;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+	.content-two-control {
+		padding: 42px 123px 0 154px;
+		width: 100%;
+		background: #100e1d;
+	}
 }

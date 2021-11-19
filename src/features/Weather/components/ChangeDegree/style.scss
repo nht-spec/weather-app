@@ -1,0 +1,23 @@
+.degree-control {
+	justify-content: end;
+
+	.degree-c {
+		margin-right: 12px;
+	}
+	.degree {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #585676;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 21px;
+		color: #e7e7eb;
+		border: none;
+		cursor: pointer;
+	}
+	.degree-choose {
+		background-color: #e7e7eb;
+		color: #110e3c;
+	}
+}
